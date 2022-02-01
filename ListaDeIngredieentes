@@ -1,4 +1,30 @@
-Ingredientes = ["calabres", "mussarela", "molho de tomate", "tomate, "cebola", 
-                "alho", "atum, "frango", "catupiry", "oregano"]
-
+#pizzaria
+ingredientes = ["linguiça", "peperone","mussarela", "molho de tomate",
+                "mangerição"]
                 
+estoque = {"linguiça":5 , "peperone": 2, "mussarela": 2,
+           "molho de tomate": 1 , "mangerição": 5 }
+           
+print(estoque)
+
+ingre_cliente = []
+ingre = (True)
+
+while ingre:
+    ingre = input("escolha seus ingredientes, para sair digite sair")
+
+    if ingre == "sair":
+        break
+    elif ingre in estoque:
+        if estoque[ingre] == 0:
+            print("não temos mais "+ ingre + " escolha outro")
+        else:
+            estoque[ingre] = estoque[ingre] - 1
+            ingre_cliente.append(ingre)
+            print(ingre_cliente)
+            print(estoque)
+    else:
+        print("nao temos esse ingrediente escolha outro")
+
+print("pedido finalizado você escolheu :")
+print(ingre_cliente)
